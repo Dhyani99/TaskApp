@@ -1,0 +1,81 @@
+[{
+  "_id": {
+    "$oid": "649c8e0b27e1ccd16ac30b96"
+  },
+  "userid": {
+    "$oid": "649c8ce227e1ccd16ac30b90"
+  },
+  "title": "Get Oranges",
+  "details": "Buy 1 kg Oranges from Giants",
+  "priority": "high",
+  "status": "incomplete",
+  "deadline": {
+    "$date": {
+      "$numberLong": "1687996800000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "649c8f1227e1ccd16ac30b9b"
+  },
+  "userid": {
+    "$oid": "649c8ce227e1ccd16ac30b90"
+  },
+  "title": "Buy TV",
+  "details": "Buy 43 inch television for the bedroom along with Roku",
+  "priority": "low",
+  "status": "incomplete",
+  "deadline": {
+    "$date": {
+      "$numberLong": "1691452800000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "649c8f8b27e1ccd16ac30b9c"
+  },
+  "userid": {
+    "$oid": "649c8ce227e1ccd16ac30b91"
+  },
+  "title": "Submission Deadline",
+  "details": "Complete Software Testing Project along with 2 homeworks",
+  "priority": "high",
+  "status": "incomplete",
+  "deadline": {
+    "$date": {
+      "$numberLong": "1688169600000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "649c8fd627e1ccd16ac30ba1"
+  },
+  "userid": {
+    "$oid": "649c8ce227e1ccd16ac30b92"
+  },
+  "title": "Get Drivers License",
+  "details": "Complete teh Driving classes and get the license before the Austin trip",
+  "priority": "low",
+  "status": "incomplete",
+  "deadline": {
+    "$date": {
+      "$numberLong": "1696118400000"
+    }
+  }
+},{
+  "_id": {
+    "$oid": "649c901a27e1ccd16ac30ba2"
+  },
+  "userid": {
+    "$oid": "649c8ce227e1ccd16ac30b93"
+  },
+  "title": "Fight with IRS",
+  "details": "Give illogical reasons and get the money back from the IRS. Go the extent where you can have a fist fight.",
+  "priority": "high",
+  "status": "incomplete",
+  "deadline": {
+    "$date": {
+      "$numberLong": "1688947200000"
+    }
+  }
+}]
