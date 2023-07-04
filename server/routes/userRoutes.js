@@ -16,7 +16,6 @@ router.post("/login", async function (req, res, next) {
     const user = await User.findOne({ email: req.body.email });
     if (user) {
       const result = req.body.password === user.password;
-      console.log(user.password);
       if (result) {
         res.status(200).send();
       } else {
@@ -25,8 +24,8 @@ router.post("/login", async function (req, res, next) {
     } else {
       res.status(400).json({ error: "User doesn't exist" });
     }
-  } catch (error) {
-    res.status(400).json({ error });
+  } catch (e) {
+    res.status(400).json({ error: e });
   }
 });
 
@@ -39,13 +38,18 @@ router.get("/:id", function (req, res, next) {
 });
 
 router.post("/register", async (req, res) => {
-  const user = await User.create({
-    name: req.body.name,
-    email: req.body.email,
-    password: req.body.password,
-  });
-
-  return res.status(200).json(user);
+  try {
+    const user = await User.create({
+      name: req.body.name,
+      email: req.body.email,
+      password: req.body.password,
+    });
+    if (user) {
+      res.status(200).json(user);
+    }
+  } catch (e) {
+    res.status(400).json({ error: e });
+  }
 });
 
 // update a user in the database
