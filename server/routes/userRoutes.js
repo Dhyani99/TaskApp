@@ -17,14 +17,30 @@ router.post("/login", async function (req, res, next) {
     if (user) {
       const result = req.body.password === user.password;
       if (result) {
-        res.status(200).send();
+        console.log(
+          "User logged in successfully with id : ",
+          user._id.toString()
+        );
+        res.status(200).json({ user: user });
       } else {
+        console.log(
+          "User login failed because of wrong password for id : ",
+          user._id.toString()
+        );
         res.status(400).json({ error: "password doesn't match" });
       }
     } else {
+      console.log(
+        "User login failed because of wrong email for id : ",
+        user._id.toString()
+      );
       res.status(400).json({ error: "User doesn't exist" });
     }
   } catch (e) {
+    console.log(
+      "User login failed because netwrk issue for id : ",
+      user._id.toString()
+    );
     res.status(400).json({ error: e });
   }
 });
