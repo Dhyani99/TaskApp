@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"userid\": \"649dfffa0ba563448d6dbf43\",\r\n    \"name\": \"Darla\",\r\n    \"email\": \"darla@gmail.com\",\r\n    \"password\": \"darla@123\"\r\n}",
+							"raw": "{\r\n    \"name\": \"Tony\",\r\n    \"email\": \"tony@gmail.com\",\r\n    \"password\": \"tony@123\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -23,7 +23,7 @@
 							}
 						},
 						"url": {
-							"raw": "http://127.0.0.1:5000/users",
+							"raw": "http://127.0.0.1:5000/users/register",
 							"protocol": "http",
 							"host": [
 								"127",
@@ -33,7 +33,8 @@
 							],
 							"port": "5000",
 							"path": [
-								"users"
+								"users",
+								"register"
 							]
 						}
 					},
@@ -103,6 +104,38 @@
 							"path": [
 								"users",
 								"649c8ce227e1ccd16ac30b90"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Login user",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"darla@gmail.com\",\r\n    \"password\": \"darla@123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://127.0.0.1:5000/users/login",
+							"protocol": "http",
+							"host": [
+								"127",
+								"0",
+								"0",
+								"1"
+							],
+							"port": "5000",
+							"path": [
+								"users",
+								"login"
 							]
 						}
 					},
