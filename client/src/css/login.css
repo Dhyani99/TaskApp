@@ -1,0 +1,9 @@
+.loginForm {
+  margin: auto;
+}
+
+.errorText {
+  color: red;
+  font-size: larger;
+  font-weight: bold;
+}

@@ -1,9 +1,12 @@
 const express = require("express");
 const connectDB = require("./db/conn.js");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 // express
 const app = express();
+
+app.use(cors());
 
 //connect to database
 connectDB();
