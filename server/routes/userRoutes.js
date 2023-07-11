@@ -55,15 +55,26 @@ router.get("/:id", function (req, res, next) {
 
 router.post("/register", async (req, res) => {
   try {
-    const user = await User.create({
-      name: req.body.name,
-      email: req.body.email,
-      password: req.body.password,
-    });
-    if (user) {
-      res.status(200).json(user);
+    const checkUser = User.findOne({ email: req.body.email });
+
+    if (checkUser) {
+      res.status(201).json({ error: "User Already Exisits" });
+    } else {
+      const user = await User.create({
+        name: req.body.name,
+        email: req.body.email,
+        password: req.body.password,
+      });
+      if (user) {
+        console.log(
+          "User created successfully with id : ",
+          user._id.toString()
+        );
+        res.status(200).json(user);
+      }
     }
   } catch (e) {
+    console.log("User creation failed");
     res.status(400).json({ error: e });
   }
 });
