@@ -20,6 +20,14 @@ router.get("/:id", function (req, res, next) {
     .catch(next);
 });
 
+router.get("/user/:userId", function (req, res, next) {
+  Task.find({ userid: req.params.userId })
+    .then((result) => {
+      res.status(200).json({ result: result });
+    })
+    .catch(next);
+});
+
 // add a new task to database
 router.post("/", function (req, res, next) {
   Task.create(req.body)

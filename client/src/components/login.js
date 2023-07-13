@@ -7,7 +7,6 @@ function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(false);
-
   let navigate = useNavigate();
 
   const handleLogin = (e) => {
@@ -17,11 +16,12 @@ function Login() {
       password: password,
     };
     axios
-      .post("/users/login", userData)
+      .post("/api/users/login", userData)
       .then((response) => {
         if (response.status === 200) {
           setError(false);
-          navigate("/register");
+          localStorage.setItem("user", JSON.stringify(response.data.user));
+          navigate("/dashboard");
         }
       })
       .catch((e) => {
