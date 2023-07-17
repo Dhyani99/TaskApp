@@ -12,8 +12,8 @@ app.use(cors());
 connectDB();
 
 app.use(express.json());
-app.use("/tasks", require("./routes/taskRoutes.js"));
-app.use("/users", require("./routes/userRoutes.js"));
+app.use("/api/tasks", require("./routes/taskRoutes.js"));
+app.use("/api/users", require("./routes/userRoutes.js"));
 
 const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
